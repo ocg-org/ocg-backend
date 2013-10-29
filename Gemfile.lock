@@ -28,6 +28,8 @@ GEM
     addressable (2.3.5)
     arel (4.0.0)
     atomic (1.1.14)
+    bootstrap-sass (3.0.0.0.rc2)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -140,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  bootstrap-sass (~> 3.0.0.0.rc)
   coffee-rails (~> 4.0.0)
   factory_girl_rails (~> 4.0)
   jbuilder (~> 1.2)
