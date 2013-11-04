@@ -22,4 +22,12 @@ describe "Regions Controller", :type => :feature do
     expect(page).to have_content "Region was successfully created"
   end
 
+  it "displays child regions" do
+    r = FactoryGirl.create(:region, :name => "Europe")
+    FactoryGirl.create(:region, :name => "Germany", :parent_region => r)
+
+    page.visit '/regions/1'
+    expect(page).to have_content "Germany"
+  end
+
 end
