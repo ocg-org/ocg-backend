@@ -39,6 +39,7 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'launchy', :require => false
 end
 
 # Use ActiveModel has_secure_password
