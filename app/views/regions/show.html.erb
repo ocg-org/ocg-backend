@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @region.name %>
+</p>
+
+<p>
+  <strong>Parent region:</strong>
+  <%= @region.parent_region_id %>
+</p>
+
+<ul>
+  <% @region.child_regions.each do |child_region| %>
+    <li><%= link_to child_region.name, child_region %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_region_path(@region) %> |
+<%= link_to 'Back', regions_path %>
