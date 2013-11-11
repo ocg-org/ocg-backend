@@ -30,4 +30,12 @@ describe "Regions Controller", :type => :feature do
     expect(page).to have_content "Germany"
   end
 
+  it "displays child rocks" do
+    r = FactoryGirl.create(:region, :name => "Schrammsteine")
+    FactoryGirl.create(:rock, :name => "Kleiner Dom", :region => r)
+
+    page.visit '/regions/1'
+    expect(page).to have_content "Kleiner Dom"
+  end
+
 end
