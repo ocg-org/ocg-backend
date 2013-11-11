@@ -1,0 +1,31 @@
+<h1>Listing rocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Height</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rocks.each do |rock| %>
+      <tr>
+        <td><%= rock.name %></td>
+        <td><%= rock.region_id %></td>
+        <td><%= rock.height %></td>
+        <td><%= link_to 'Show', rock %></td>
+        <td><%= link_to 'Edit', edit_rock_path(rock) %></td>
+        <td><%= link_to 'Destroy', rock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rock', new_rock_path %>

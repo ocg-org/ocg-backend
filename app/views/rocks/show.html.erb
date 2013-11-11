@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rock.name %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @rock.region_id %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @rock.height %>
+</p>
+
+<%= link_to 'Edit', edit_rock_path(@rock) %> |
+<%= link_to 'Back', rocks_path %>
