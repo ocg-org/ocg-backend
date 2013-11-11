@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe "Region" do
 
+  it "does not hold itself as child region" do
+    r = FactoryGirl.create(:region)
+    r.parent_region = r
+    assert !r.save, "Region cannot hold itself as child"
+  end
+
   it "holds only rocks or regions" do
     r = FactoryGirl.create(:region, :name => "Sachsen")
     FactoryGirl.create(:region, :name => "Saechsische Schweiz", :parent_region => r)
@@ -13,7 +19,6 @@ describe "Region" do
     FactoryGirl.create(:rock, :region => r)
     region = Region.new(:name => "false region", :parent_region => r)
     assert !region.save, "Region should not be saved to parent region, which already holds rocks"
-
   end
 
 end
