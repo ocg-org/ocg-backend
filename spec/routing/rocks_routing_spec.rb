@@ -8,7 +8,8 @@ describe RocksController do
     end
 
     it "routes to #new" do
-      get("/rocks/new").should route_to("rocks#new")
+      r = FactoryGirl.create(:region)
+      get("/regions/#{r.id}/rocks/new").should route_to("rocks#new", :region_id => r.id.to_s)
     end
 
     it "routes to #show" do
@@ -20,7 +21,8 @@ describe RocksController do
     end
 
     it "routes to #create" do
-      post("/rocks").should route_to("rocks#create")
+      r = FactoryGirl.create(:region)
+      post("/regions/#{r.id}/rocks").should route_to("rocks#create", :region_id => r.id.to_s)
     end
 
     it "routes to #update" do
