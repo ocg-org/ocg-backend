@@ -23,3 +23,5 @@ en:
   hello: "Hello world"
   invalid_child: "Region cannot have itself as child"
   invalid_parent: "Region cannot have itself as parent"
+  invalid_leaf: "Region can have either region or rocks as child"
+  leaf_parent: "Parent region already holds rocks"
