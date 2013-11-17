@@ -11,6 +11,17 @@ describe "Regions Controller", :type => :feature do
     expect(page).to have_content "Asia"
   end
 
+  it "displays only top level regions" do
+    r = FactoryGirl.create(:region, :name => "Europe")
+    FactoryGirl.create(:region, :name => "Asia")
+    FactoryGirl.create(:region, :name => "Germany", :parent_region => r)
+
+    page.visit '/regions'
+    expect(page).to have_content "Europe"
+    expect(page).to have_content "Asia"
+    expect(page).to have_no_content "Germany"
+  end
+
   it "creates a region" do
     visit '/regions/new'
     within("#new_region") do
@@ -28,6 +39,14 @@ describe "Regions Controller", :type => :feature do
 
     page.visit '/regions/1'
     expect(page).to have_content "Germany"
+  end
+
+  it "displays child rocks" do
+    r = FactoryGirl.create(:region, :name => "Schrammsteine")
+    FactoryGirl.create(:rock, :name => "Kleiner Dom", :region => r)
+
+    page.visit '/regions/1'
+    expect(page).to have_content "Kleiner Dom"
   end
 
 end
