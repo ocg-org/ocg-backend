@@ -22,4 +22,6 @@ class Region < ActiveRecord::Base
   has_many :rocks
 
   validates_with TreeValidator
+
+  scope :top_level, -> { where(parent_region_id: nil) }
 end
