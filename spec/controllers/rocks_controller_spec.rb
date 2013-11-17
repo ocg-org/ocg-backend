@@ -22,5 +22,19 @@ describe "Rocks Controller" do
     expect(page).to have_content "Rock was successfully created"
   end
 
+  it "edits a rock" do
+    r = FactoryGirl.create :rock
+
+    page.visit "/rocks/#{r.id}/edit"
+
+    within(".edit_rock") do
+      fill_in 'Name', :with => 'Domspitze'
+    end
+
+    click_button "Update Rock"
+    expect(response).to be_success
+    expect(page).to have_content "Rock was successfully updated"
+  end
+
 
 end
