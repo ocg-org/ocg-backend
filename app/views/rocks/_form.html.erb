@@ -1,4 +1,4 @@
-<%= form_for(@rock) do |f| %>
+<%= form_for([@region, @rock]) do |f| %>
   <% if @rock.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rock.errors.count, "error") %> prohibited this rock from being saved:</h2>
@@ -14,10 +14,6 @@
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :region_id %><br>
-    <%= f.number_field :region_id %>
   </div>
   <div class="field">
     <%= f.label :height %><br>

@@ -15,7 +15,6 @@ describe "rocks/new" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", rocks_path, "post" do
       assert_select "input#rock_name[name=?]", "rock[name]"
-      assert_select "input#rock_region_id[name=?]", "rock[region_id]"
       assert_select "input#rock_height[name=?]", "rock[height]"
     end
   end

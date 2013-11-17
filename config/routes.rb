@@ -1,7 +1,10 @@
 OcgBackend::Application.routes.draw do
   root 'regions#index'
 
-  resources :regions
+  resources :regions do
+    resources :rocks
+  end
+
   resources :rocks
 
   # The priority is based upon order of creation: first created -> highest priority.

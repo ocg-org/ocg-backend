@@ -1,5 +1,7 @@
 class RocksController < ApplicationController
   before_action :set_rock, only: [:show, :edit, :update, :destroy]
+  before_action :set_region, only: [:new, :create]
+
 
   # GET /rocks
   # GET /rocks.json
@@ -25,6 +27,7 @@ class RocksController < ApplicationController
   # POST /rocks.json
   def create
     @rock = Rock.new(rock_params)
+    @rock.region = @region
 
     respond_to do |format|
       if @rock.save
@@ -65,6 +68,10 @@ class RocksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_rock
       @rock = Rock.find(params[:id])
+    end
+
+    def set_region
+      @region = Region.find(params[:region_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
