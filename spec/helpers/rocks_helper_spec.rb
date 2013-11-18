@@ -11,5 +11,16 @@ require 'spec_helper'
 #   end
 # end
 describe RocksHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "builds breadcrumbs for the region tree for a rock" do
+    root = FactoryGirl.create(:region)
+    r = FactoryGirl.create(:region, :parent_region => root)
+    x = FactoryGirl.create(:region, :parent_region => r)
+    rock = FactoryGirl.create(:rock, :region => x)
+
+    breadcrumbs = helper.breadcrumbs_for_rock(rock)
+    expct_bc = "<ol class=\"breadcrumb\"><li>#{link_to root.name, root}</li><li>#{link_to r.name, r}</li><li>#{link_to x.name, x}</li><li class=\"active\">#{rock.name}</li></ol>"
+
+    assert_equal expct_bc, breadcrumbs
+
+  end
 end

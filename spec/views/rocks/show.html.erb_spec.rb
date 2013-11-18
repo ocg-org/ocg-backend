@@ -2,9 +2,13 @@ require 'spec_helper'
 
 describe "rocks/show" do
   before(:each) do
+    region = assign(:region, stub_model(Region,
+      :name => "Name",
+      :parent_region_id => nil,
+    ))
     @rock = assign(:rock, stub_model(Rock,
       :name => "Name",
-      :region_id => 1,
+      :region => region,
       :height => 2
     ))
   end
