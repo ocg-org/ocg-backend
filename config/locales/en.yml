@@ -20,8 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  about: "About"
   hello: "Hello world"
+  impress: "Impress"
   invalid_child: "Region cannot have itself as child"
   invalid_parent: "Region cannot have itself as parent"
   invalid_leaf: "Region can have either region or rocks as child"
   leaf_parent: "Parent region already holds rocks"
+  regions: "Regions"
+
