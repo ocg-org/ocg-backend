@@ -2,28 +2,29 @@
 
 <%= raw breadcrumbs_for_region(@region) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @region.name %>
-</p>
+<div class="header">
+  <h1><%= @region.name %></h1>
+</div>
 
-<p>
-  <strong>Parent region:</strong>
-  <%= @region.parent_region_id %>
-</p>
+<% if !@region.child_regions.empty? %>
+  <h2>Regions in <%= @region.name %></h2>
+  <div class="list-group">
+    <% @region.child_regions.each do |child_region| %>
+      <%= link_to child_region.name, child_region, :class => "list-group-item" %>
+    <% end %>
+  </div>
+<% end %>
 
-<ul>
-  <% @region.child_regions.each do |child_region| %>
-    <li><%= link_to child_region.name, child_region %></li>
-  <% end %>
-</ul>
-
-<ul>
+<% if !@region.rocks.empty? %>
+<h2>Rocks in <%= @region.name %></h2>
+<div class="list-group">
   <% @region.rocks.each do |rock| %>
-    <li><%= link_to rock.name, rock %></li>
+    <%= link_to rock.name, rock, :class => "list-group-item" %>
   <% end %>
-</ul>
+</div>
+<% end %>
 
-
-<%= link_to 'Edit', edit_region_path(@region) %> |
-<%= link_to 'Back', regions_path %>
+<div class="btn-group">
+  <%= link_to 'Add a Region', new_region_path, :class => "button" %>
+  <%= link_to 'Edit this Region', edit_region_path(@region), :class => "button" %>
+</div>

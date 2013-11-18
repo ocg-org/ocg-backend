@@ -2,20 +2,15 @@
 
 <%= raw breadcrumbs_for_rock(@rock) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @rock.name %>
-</p>
-
-<p>
-  <strong>Region:</strong>
-  <%= @rock.region_id %>
-</p>
+<div class="header">
+  <h1><%= @rock.name %></h1>
+</div>
 
 <p>
   <strong>Height:</strong>
-  <%= @rock.height %>
+  <%= @rock.height %> m
 </p>
 
-<%= link_to 'Edit', edit_rock_path(@rock) %> |
-<%= link_to 'Back', rocks_path %>
+<div class="btn-group">
+  <%= link_to 'Edit this Rock', edit_rock_path(@rock), :class => "button" %>
+</div>
