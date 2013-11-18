@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OcgBackend</title>
+  <title>Open Climbing Guide</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navigation" role="navigation">
+    <div class=navigation-header">
+      <button type="button" class="navigation-toggle" data-toggle="collapse"
+        data-target="main-navigation">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Open Climbing Guide", root_path, :class => "brand" %>
+    </div>
 
-<%= yield %>
+    <div class="navigation-main" id="main-navigation">
+      <ul class="navigation-list">
+        <li><%= link_to t(:regions), regions_path %></li>
+      </ul>
+
+      <%= form_tag '#', :class => 'navigation-search-form' do %>
+        <input-group>
+          <input type="text" placeholder="Find a Rock...">
+        </input-group>
+        <button type="submit" class="submit-button">Submit</button>
+      <% end %>
+
+      <ul class="navigation-right">
+        <li><%= link_to t(:about), '#' %></li>
+        <li><%= link_to t(:impress), '#' %></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="main-page">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

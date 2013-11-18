@@ -10,6 +10,18 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe RegionsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "Regions Helper" do
+
+  it "builds breadcrumbs for the region tree" do
+    root = FactoryGirl.create(:region)
+    r = FactoryGirl.create(:region, :parent_region => root)
+    x = FactoryGirl.create(:region, :parent_region => r)
+
+    breadcrumbs = helper.breadcrumbs_for_region(x)
+    expct_bc = "<ol class=\"breadcrumb\"><li>#{link_to root.name, root}</li><li>#{link_to r.name, r}</li><li class=\"active\">#{x.name}</li></ol>"
+
+    assert_equal expct_bc, breadcrumbs
+
+  end
+
 end

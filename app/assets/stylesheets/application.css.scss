@@ -1,0 +1,84 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+
+.navigation {
+  @extend .navbar;
+  @extend .navbar-default;
+}
+
+.navigation-header {
+  @extend .navbar-header;
+}
+
+.navigation-main {
+  @extend .collapse;
+  @extend .navbar-collapse;
+}
+
+.navigation-list {
+  @extend .nav;
+  @extend .navbar-nav;
+}
+
+.navigation-right {
+  @extend .navigation-list;
+  @extend .navbar-right;
+}
+
+.navigation-toggle {
+  @extend .navbar-toggle;
+}
+
+.navigation-search-form {
+  @extend .navbar-form;
+  @extend .navbar-left;
+}
+
+.brand {
+  @extend .navbar-brand;
+}
+
+input-group {
+  @extend div;
+  @extend .form-group;
+}
+
+input-group > input {
+  @extend .form-control;
+}
+
+.button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.submit-button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.embedded-button {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-xs;
+}
+
+.embedded-button-danger {
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-xs;
+}
+
+.main-page {
+  @extend .container;
+}
+
+.main-page > .header {
+  @extend .page-header;
+}
+
+.tbl {
+  @extend .table;
+  @extend .table-striped;
+}
+
