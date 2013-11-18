@@ -47,8 +47,38 @@ input-group > input {
   @extend .form-control;
 }
 
+.button {
+  @extend .btn;
+  @extend .btn-default;
+}
+
 .submit-button {
   @extend .btn;
   @extend .btn-default;
+}
+
+.embedded-button {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-xs;
+}
+
+.embedded-button-danger {
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-xs;
+}
+
+.main-page {
+  @extend .container;
+}
+
+.main-page > .header {
+  @extend .page-header;
+}
+
+.tbl {
+  @extend .table;
+  @extend .table-striped;
 }
 
