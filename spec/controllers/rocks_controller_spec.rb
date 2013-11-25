@@ -41,7 +41,7 @@ describe "Rocks Controller" do
     FactoryGirl.create(:route, :name => "Between a rock", :rock => r)
     FactoryGirl.create(:route, :name => "And a hard place", :rock => r)
 
-    page.visit "/rocks/#(r.id}"
+    page.visit "/rocks/#{r.id}"
     expect(page).to have_content "Between a rock"
     expect(page).to have_content "And a hard place"
   end
