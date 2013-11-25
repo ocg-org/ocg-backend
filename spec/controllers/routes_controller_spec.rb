@@ -15,4 +15,20 @@ describe "Routes Controller", :type => :feature do
     expect(page).to have_content "5"
   end
 
+  it "creates a route for the correct rock" do
+    rock = FactoryGirl.create :rock
+
+    page.visit "/rocks/#{rock.id}/routes/new"
+
+    within("#new_route") do
+      fill_in 'Name', :with => 'Alter Weg'
+      fill_in 'Difficulty', :with => '2'
+      fill_in 'Description', :with => 'Der Erste'
+    end
+
+    click_button "Create Route"
+    expect(response).to be_success
+    expect(page).to have_content "Route was successfully added"
+  end
+
 end
