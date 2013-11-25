@@ -1,5 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :set_rock, only: [:new, :create]
 
   # GET /routes
   # GET /routes.json
@@ -65,6 +66,10 @@ class RoutesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_route
       @route = Route.find(params[:id])
+    end
+
+    def set_rock
+      @rock = Rock.find(params[:rock_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
