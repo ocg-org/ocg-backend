@@ -4,7 +4,7 @@ describe RoutesController do
   describe "routing" do
 
     it "routes to #new" do
-      get("/rocks/1/routes/new").should route_to("routes#new")
+      get("/rocks/1/routes/new").should route_to("routes#new", :rock_id => "1")
     end
 
     it "routes to #show" do
@@ -16,7 +16,7 @@ describe RoutesController do
     end
 
     it "routes to #create" do
-      post("/rocks/1/routes").should route_to("routes#create")
+      post("/rocks/1/routes").should route_to("routes#create", :rock_id => "1")
     end
 
     it "routes to #update" do
