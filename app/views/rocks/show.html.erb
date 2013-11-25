@@ -11,6 +11,19 @@
   <%= @rock.height %> m
 </p>
 
+<table class="tbl">
+  <tr>
+    <th>Route Name</th>
+    <th>Difficulty</th>
+  </tr>
+  <% @rock.routes.each do |route| %>
+    <tr>
+      <td><%= route.name %></td>
+      <td><%= route.difficulty %></td>
+    </tr>
+  <% end %>
+</table>
+
 <div class="btn-group">
   <%= link_to 'Edit this Rock', edit_rock_path(@rock), :class => "button" %>
 </div>
