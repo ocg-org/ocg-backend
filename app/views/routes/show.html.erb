@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @route.name %>
-</p>
+<%= raw breadcrumbs_for_route(@route) %>
+
+<div class="header">
+  <h1><%= @route.name %></h1>
+</div>
 
 <p>
   <strong>Difficulty:</strong>
@@ -15,10 +16,6 @@
   <%= @route.description %>
 </p>
 
-<p>
-  <strong>Rock:</strong>
-  <%= @route.rock_id %>
-</p>
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+<%= link_to 'Back', rock_path(@route.rock) %>

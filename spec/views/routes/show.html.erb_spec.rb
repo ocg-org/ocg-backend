@@ -16,6 +16,5 @@ describe "routes/show" do
     rendered.should match(/Name/)
     rendered.should match(/1/)
     rendered.should match(/MyText/)
-    rendered.should match(/2/)
   end
 end
