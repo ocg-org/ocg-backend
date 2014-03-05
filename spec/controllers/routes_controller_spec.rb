@@ -24,6 +24,7 @@ describe "Routes Controller", :type => :feature do
       fill_in 'Name', :with => 'Alter Weg'
       fill_in 'Difficulty', :with => '2'
       fill_in 'Description', :with => 'Der Erste'
+      fill_in 'Material', :with => 'slings, express'
     end
 
     click_button "Create Route"
