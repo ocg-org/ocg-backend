@@ -18,7 +18,7 @@
   </tr>
   <% @rock.routes.each do |route| %>
     <tr>
-      <td><%= route.name %></td>
+      <td><%= link_to route.name, route %></td>
       <td><%= route.difficulty %></td>
     </tr>
   <% end %>
