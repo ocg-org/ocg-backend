@@ -76,6 +76,6 @@ class RocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rock_params
-      params.require(:rock).permit(:name, :region_id, :height)
+      params.require(:rock).permit(:name, :region_id, :height, :latitude, :longtitude)
     end
 end
