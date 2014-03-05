@@ -7,14 +7,14 @@
 </div>
 
 <p>
-  <strong>Height:</strong>
+<strong><%= t('.height') %>:</strong>
   <%= @rock.height %> m
 </p>
 
 <table class="tbl">
   <tr>
-    <th>Route Name</th>
-    <th>Difficulty</th>
+    <th><%= t('.rname') %></th>
+    <th><%= t('.difficulty') %></th>
   </tr>
   <% @rock.routes.each do |route| %>
     <tr>

@@ -30,6 +30,12 @@ en:
   leaf_parent: "Parent region already holds rocks"
   regions: "Regions"
 
+  rocks:
+    show:
+      height:     "Height"
+      rname:      "Route Name"
+      difficulty: "Difficulty"
+
   routes:
     show:
       difficulty:   "Difficulty"
