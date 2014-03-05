@@ -7,9 +7,22 @@
 </div>
 
 <p>
-  <strong>Height:</strong>
+<strong><%= t('.height') %>:</strong>
   <%= @rock.height %> m
 </p>
+
+<table class="tbl">
+  <tr>
+    <th><%= t('.rname') %></th>
+    <th><%= t('.difficulty') %></th>
+  </tr>
+  <% @rock.routes.each do |route| %>
+    <tr>
+      <td><%= link_to route.name, route %></td>
+      <td><%= route.difficulty %></td>
+    </tr>
+  <% end %>
+</table>
 
 <div class="btn-group">
   <%= link_to 'Edit this Rock', edit_rock_path(@rock), :class => "button" %>

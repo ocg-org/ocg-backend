@@ -36,5 +36,14 @@ describe "Rocks Controller" do
     expect(page).to have_content "Rock was successfully updated"
   end
 
+  it "displays all routes for a rock" do
+    r = FactoryGirl.create(:rock)
+    FactoryGirl.create(:route, :name => "Between a rock", :rock => r)
+    FactoryGirl.create(:route, :name => "And a hard place", :rock => r)
+
+    page.visit "/rocks/#{r.id}"
+    expect(page).to have_content "Between a rock"
+    expect(page).to have_content "And a hard place"
+  end
 
 end

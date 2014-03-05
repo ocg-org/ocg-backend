@@ -1,11 +1,16 @@
 OcgBackend::Application.routes.draw do
+
   root 'regions#index'
 
   resources :regions do
     resources :rocks, only: [:new, :create]
   end
 
-  resources :rocks, except: [:new, :create]
+  resources :rocks, except: [:new, :create] do
+    resources :routes, only: [:new, :create]
+  end
+
+  resources :routes, except: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

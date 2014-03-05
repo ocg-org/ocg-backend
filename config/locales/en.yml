@@ -21,6 +21,7 @@
 
 en:
   about: "About"
+  edit:  "Edit"
   hello: "Hello world"
   impress: "Impress"
   invalid_child: "Region cannot have itself as child"
@@ -29,3 +30,13 @@ en:
   leaf_parent: "Parent region already holds rocks"
   regions: "Regions"
 
+  rocks:
+    show:
+      height:     "Height"
+      rname:      "Route Name"
+      difficulty: "Difficulty"
+
+  routes:
+    show:
+      difficulty:   "Difficulty"
+      description:  "Description"

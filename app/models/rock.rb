@@ -8,6 +8,7 @@ end
 
 class Rock < ActiveRecord::Base
   belongs_to :region
+  has_many :routes
 
   validates_with LeafValidator
 end

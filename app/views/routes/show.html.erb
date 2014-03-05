@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= raw breadcrumbs_for_route(@route) %>
+
+<div class="header">
+  <h1><%= @route.name %></h1>
+</div>
+
+<p>
+  <strong><%= t('.difficulty') %>:</strong>
+  <%= @route.difficulty %>
+</p>
+
+<p>
+  <strong><%= t('.description') %>:</strong>
+  <%= @route.description %>
+</p>
+
+<div class="btn-group">
+  <%= link_to t('edit'), edit_route_path(@route), :class => "button" %>
+</div>
