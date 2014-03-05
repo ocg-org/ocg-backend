@@ -4,6 +4,22 @@
 
 <div class="header">
   <h1><%= @rock.name %></h1>
+  <%=
+    if !@rock.latitude.nil? && !@rock.longtitude.nil?
+      map(:center => {
+            :latlng => [@rock.latitude, @rock.longtitude],
+            :zoom => 18
+          },
+          :markers => [
+           {
+             :latlng => [@rock.latitude, @rock.longtitude],
+             :popup => @rock.name
+           }
+          ]
+      )
+    end
+%>
+
 </div>
 
 <p>
