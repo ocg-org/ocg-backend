@@ -7,15 +7,15 @@
 </div>
 
 <p>
-  <strong>Difficulty:</strong>
+  <strong><%= t('.difficulty') %>:</strong>
   <%= @route.difficulty %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('.description') %>:</strong>
   <%= @route.description %>
 </p>
 
 <div class="btn-group">
-  <%= link_to 'Edit', edit_route_path(@route), :class => "button" %>
+  <%= link_to t('edit'), edit_route_path(@route), :class => "button" %>
 </div>
