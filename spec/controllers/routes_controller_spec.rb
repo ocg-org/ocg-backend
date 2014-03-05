@@ -28,7 +28,24 @@ describe "Routes Controller", :type => :feature do
 
     click_button "Create Route"
     expect(response).to be_success
-    expect(page).to have_content "Route was successfully added"
+    expect(page).to have_content "Route was successfully created"
+  end
+
+  it "edits a route" do
+    rock = FactoryGirl.create :rock
+    r = FactoryGirl.create(:route, :name => "Snake dice",
+                           :rock => rock,
+                           :description => "Follow me!",
+                           :difficulty => 5)
+    page.visit "/routes/#{r.id}/edit"
+
+    within(".edit_route") do
+      fill_in 'Name', :with => "Snake dike"
+    end
+
+    click_button "Update Route"
+    expect(response).to be_success
+    expect(page).to have_content "Route was successfully updated"
   end
 
 end
