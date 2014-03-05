@@ -16,6 +16,6 @@
   <%= @route.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', rock_path(@route.rock) %>
+<div class="btn-group">
+  <%= link_to 'Edit', edit_route_path(@route), :class => "button" %>
+</div>
