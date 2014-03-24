@@ -1,5 +1,8 @@
 OcgBackend::Application.routes.draw do
 
+  devise_for :users
+  resources :users
+
   root 'regions#index'
 
   resources :regions do
