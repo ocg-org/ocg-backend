@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 
+# Devise for Authentication
+gem 'devise'
+
 # Tags for different infos on routes
 gem 'acts-as-taggable-on'
 
