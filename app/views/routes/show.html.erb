@@ -16,6 +16,15 @@
   <%= @route.description %>
 </p>
 
+<% @route.material.any? do %>
+  <p>
+    <strong><%= t('.material') %>:</strong>
+    <% @route.material.each do |tag| %>
+      <span class="tag"><%= tag.name %></span>
+    <% end %>
+  </p>
+<% end %>
+
 <div class="btn-group">
   <%= link_to t('edit'), edit_route_path(@route), :class => "button" %>
 </div>

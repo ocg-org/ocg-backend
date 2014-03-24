@@ -75,6 +75,6 @@ class RoutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:name, :difficulty, :description, :rock_id)
+      params.require(:route).permit(:name, :difficulty, :description, :rock_id, :material_list)
     end
 end
