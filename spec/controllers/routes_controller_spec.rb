@@ -8,11 +8,14 @@ describe "Routes Controller", :type => :feature do
                            :rock => rock,
                            :description => "Follow me!",
                            :difficulty => 5)
+    r.material_list = "slings, express"
+    r.save
     page.visit "/routes/#{r.id}"
 
     expect(page).to have_content "Snake dike"
     expect(page).to have_content "Follow me!"
     expect(page).to have_content "5"
+    expect(page).to have_content "slings"
   end
 
   it "creates a route for the correct rock" do
