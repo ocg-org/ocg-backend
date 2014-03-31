@@ -39,8 +39,12 @@
   </nav>
 
   <div class="main-page">
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
+    <% unless notice.nil? %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+    <% unless alert.nil? %>
+      <p id="alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
   </div>
