@@ -91,3 +91,25 @@ input-group > input {
 #map {
   height: 250px;
 }
+
+.column-small {
+  @extend .col-md-1;
+}
+
+.column-medium {
+  @extend .col-md-4;
+}
+
+.column-large {
+  @extend .col-md-6;
+}
+
+#notice {
+  @extend .alert;
+  @extend .alert-info;
+}
+
+#alert {
+  @extend .alert;
+  @extend .alert-warn;
+}
