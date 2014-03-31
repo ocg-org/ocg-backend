@@ -1,17 +1,34 @@
-<h2>Sign in</h2>
+<div class="header">
+<h1>
+  Sign into OpenClimbing Guide
+  <small>Welcome, back!</small>
+</h1>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+<div class="column-medium">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name),
+               :html => { :role => "form" }) do |f| %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <input-group>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </input-group>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <input-group>
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </input-group>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="checkbox">
+        <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+      </div>
+    <% end -%>
+
+    <div>
+      <%= f.submit "Sign in", :class => "button" %>
+    </div>
+  <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
