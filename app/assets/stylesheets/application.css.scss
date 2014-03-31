@@ -35,6 +35,11 @@
   @extend .navbar-left;
 }
 
+.navigation-login-form {
+  @extend .navbar-form;
+  @extend .navbar-right;
+}
+
 .brand {
   @extend .navbar-brand;
 }
